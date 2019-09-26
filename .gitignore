@@ -1,0 +1,15 @@
+**/.DS_Store
+**/*~
+**/*.aux
+**/*.bbl
+**/*.bcf
+**/*.blg
+**/*.lof
+**/*.log
+**/*.lot
+**/*.out
+**/*.pdf
+**/*.run.xml
+**/*.toc
+**/auto
+

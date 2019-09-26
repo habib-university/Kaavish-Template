@@ -1,0 +1,82 @@
+% adapted from the 5-part series at https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1):_Basic_Structure
+
+\documentclass[12pt]{report}
+
+\usepackage{biblatex}  % reference management
+\usepackage{geometry}  % better margins and margin control
+\usepackage{graphicx}  % to include figures
+\usepackage{hyperref}  % internal and external links
+\usepackage[utf8]{inputenc}  % support for non-ASCII characters
+\usepackage{listings}  % typset code
+\usepackage{outlines}  % easy nesting of lists
+\usepackage{upquote}  % prevent mishandling of single quotes in listings
+
+% --- Customize the appearance of hyperref links using \hypersetup
+% See https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Customization
+
+\addbibresource{references.bib}  % separate file for references
+
+\graphicspath{ {images/} }  % separate folder for images
+
+\begin{document}
+
+\chapter*{Dedication}
+For ammi, abbu, and pappu.
+
+\chapter*{Acknowledgements}
+We want to thank the CS faculty and ...
+
+\chapter*{Abstract}
+Abstract goes here
+
+% --- The following are generated automatically.
+\tableofcontents
+\listoffigures
+\listoftables
+
+% --- Put chapters in a separate folder.
+
+\chapter{Introduction}
+\label{chap:intro}
+\input{chapters/introduction}
+
+\chapter{Literature Review}
+\label{chap:lit}
+\input{chapters/review}
+
+\chapter{Software Requirement Specification (SRS)}
+\label{chap:srs}
+\input{chapters/srs}
+
+\chapter{Software Design Specifications (SDS)}
+\label{chap:sds}
+\input{chapters/sds}
+
+% --- Rename apprporiately for your Kaaivsh.
+\chapter{Implementation/Experiments and Results}
+\label{chap:results}
+\input{chapters/results}
+
+\chapter{Conclusion and Future Work}
+\label{chap:outro}
+\input{chapters/conclusion}
+
+
+\appendix
+\chapter{More Math}
+\input{chapters/appendix-math}
+
+\chapter{Data}
+\input{chapters/appendix-data}
+
+\chapter{Code}
+\input{chapters/appendix-code}
+
+
+% --- Print the bibliography with a TOC entry and headed, "Referneces".
+\printbibliography[heading=bibintoc,title={References}]
+
+
+
+
+\end{document}
