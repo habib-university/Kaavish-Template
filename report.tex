@@ -16,7 +16,7 @@
 
 \addbibresource{references.bib}  % separate file for references
 
-\graphicspath{ {images/} }  % separate folder for images
+\graphicspath{ {images/} }  % separate folder for images named 'images'.
 
 \begin{document}
 
@@ -29,12 +29,12 @@ We want to thank the CS faculty and ...
 \chapter*{Abstract}
 Abstract goes here
 
-% --- The following are generated automatically.
+% --- The following are automatically populated by LaTeX \chapter, \section and related, \figure, and \table.
 \tableofcontents
 \listoffigures
 \listoftables
 
-% --- Put chapters in a separate folder.
+% --- Put chapters in a separate folder named 'chapters'.
 
 \chapter{Introduction}
 \label{chap:intro}
@@ -52,7 +52,7 @@ Abstract goes here
 \label{chap:sds}
 \input{chapters/sds}
 
-% --- Rename apprporiately for your Kaaivsh.
+% --- Modify the chapter title appropriately your Kaaivsh.
 \chapter{Implementation/Experiments and Results}
 \label{chap:results}
 \input{chapters/results}
@@ -61,14 +61,17 @@ Abstract goes here
 \label{chap:outro}
 \input{chapters/conclusion}
 
-
 \appendix
+
+% This appendix is optional.
 \chapter{More Math}
 \input{chapters/appendix-math}
 
+% This appendix is required if the data set is not fully described in the main text.
 \chapter{Data}
 \input{chapters/appendix-data}
 
+% This appendix is required if the code is not fully described in the main text.
 \chapter{Code}
 \input{chapters/appendix-code}
 
