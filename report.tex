@@ -9,16 +9,29 @@
 \usepackage[utf8]{inputenc}  % support for non-ASCII characters
 \usepackage{listings}  % typset code
 \usepackage{outlines}  % easy nesting of lists
+\usepackage{titling}  % title page.
 \usepackage{upquote}  % prevent mishandling of single quotes in listings
 
 % --- Customize the appearance of hyperref links using \hypersetup
 % See https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Customization
 
-\addbibresource{references.bib}  % separate file for references
+% Separate folder for images named 'images'.
+\graphicspath{ {images/} }
 
-\graphicspath{ {images/} }  % separate folder for images named 'images'.
+% Separate file for references
+\addbibresource{references.bib}
+
+% Replace with your title
+\title{Kaavish Template}
+
+% Allow recalling document title
+% See https://tex.stackexchange.com/a/15806/44301
+\makeatletter\let\Title\@title\makeatother  
 
 \begin{document}
+
+\include{titlepage}
+
 
 \chapter*{Dedication}
 For ammi, abbu, and pappu.
