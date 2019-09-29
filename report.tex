@@ -1,4 +1,5 @@
-% adapted from the 5-part series at https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1):_Basic_Structure
+% adapted from the 5-part series at
+% https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1):_Basic_Structure
 
 \documentclass[12pt]{report}
 
@@ -9,11 +10,14 @@
 \usepackage[utf8]{inputenc}  % support for non-ASCII characters
 \usepackage{listings}  % typset code
 \usepackage{outlines}  % easy nesting of lists
-\usepackage{titling}  % title page.
+\usepackage{titlesec}  % customize chapter title 
 \usepackage{upquote}  % prevent mishandling of single quotes in listings
 
-% --- Customize the appearance of hyperref links using \hypersetup
+% TODO: Customize the appearance of hyperref links using \hypersetup
 % See https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Customization
+
+% Custom chapter format.
+\titleformat{\chapter}[hang]{\bf\huge}{\thechapter.}{2pc}{}
 
 % Separate folder for images named 'images'.
 \graphicspath{ {images/} }
@@ -22,16 +26,16 @@
 \addbibresource{references.bib}
 
 % Replace with your title
-\title{Kaavish Template}
+\title{Chhoti Si Kaavish}
 
 % Allow recalling document title
-% See https://tex.stackexchange.com/a/15806/44301
+% from https://tex.stackexchange.com/a/15806/44301
 \makeatletter\let\Title\@title\makeatother  
 
 \begin{document}
 
-\include{titlepage}
-
+\include{titlepage}  % title page.
+\include{approval}  % approval page.
 
 \chapter*{Dedication}
 For ammi, abbu, and pappu.
@@ -42,12 +46,12 @@ We want to thank the CS faculty and ...
 \chapter*{Abstract}
 Abstract goes here
 
-% --- The following are automatically populated by LaTeX \chapter, \section and related, \figure, and \table.
+% The following are automatically populated by LaTeX \chapter, \section and related, \figure, and \table.
 \tableofcontents
 \listoffigures
 \listoftables
 
-% --- Put chapters in a separate folder named 'chapters'.
+% TODO: Put chapters in a separate folder named 'chapters'.
 
 \chapter{Introduction}
 \label{chap:intro}
@@ -61,11 +65,11 @@ Abstract goes here
 \label{chap:srs}
 \input{chapters/srs}
 
-\chapter{Software Design Specifications (SDS)}
+\chapter{Software Design Specification\\ (SDS)}
 \label{chap:sds}
 \input{chapters/sds}
 
-% --- Modify the chapter title appropriately your Kaaivsh.
+% TODO: Modify the chapter title appropriately your Kaaivsh.
 \chapter{Implementation/Experiments and Results}
 \label{chap:results}
 \input{chapters/results}
@@ -89,10 +93,7 @@ Abstract goes here
 \input{chapters/appendix-code}
 
 
-% --- Print the bibliography with a TOC entry and headed, "Referneces".
+% Print the bibliography with a ToC entry and titled, "Referneces".
 \printbibliography[heading=bibintoc,title={References}]
-
-
-
 
 \end{document}
