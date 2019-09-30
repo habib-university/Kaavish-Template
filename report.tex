@@ -12,8 +12,11 @@
 \usepackage{listings}  % typset code
 \usepackage{outlines}  % easy nesting of lists
 \usepackage{tabularx}  % more control over table column width
-\usepackage{titlesec}  % customize chapter title 
 \usepackage{upquote}  % prevent mishandling of single quotes in listings
+\usepackage[titletoc]{appendix}
+\usepackage{titlesec}  % customize chapter title 
+
+\usepackage{lipsum}
 
 % TODO: Customize the appearance of hyperref links using \hypersetup
 % See https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Customization
@@ -79,8 +82,11 @@ Abstract goes here
 \label{chap:outro}
 \input{chapters/conclusion}
 
-\appendix
+\begin{appendices}
 
+% \titleformat{\chapter}[display]
+%             {\chaptertitlename\ \thechapter}
+  
 % This appendix is optional.
 \chapter{More Math}
 \input{chapters/appendix-math}
@@ -92,7 +98,7 @@ Abstract goes here
 % This appendix is required if the code is not fully described in the main text.
 \chapter{Code}
 \input{chapters/appendix-code}
-
+\end{appendices}
 
 % Print the bibliography with a ToC entry and titled, "References".
 \printbibliography[heading=bibintoc,title={References}]
