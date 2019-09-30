@@ -1,6 +1,6 @@
 % adapted by WS from SSR's Word document and from the 5-part series at
 % https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1):_Basic_Structure
-% reviewd by MAM
+% reviewed by MAM
 
 \documentclass[12pt,twosided]{report}
 
@@ -14,9 +14,6 @@
 \usepackage{tabularx}  % more control over table column width
 \usepackage{titlesec}  % customize chapter title 
 \usepackage{upquote}  % prevent mishandling of single quotes in listings
-
-
-\usepackage{lipsum}
 
 % TODO: Customize the appearance of hyperref links using \hypersetup
 % See https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Customization
@@ -61,7 +58,6 @@ Abstract goes here
 \chapter{Introduction}
 \label{chap:intro}
 \input{chapters/introduction}
-\lipsum[2-14]
 
 \chapter{Literature Review}
 \label{chap:lit}
@@ -71,7 +67,7 @@ Abstract goes here
 \label{chap:srs}
 \input{chapters/srs}
 
-\chapter{Software Design Specification\\ (SDS)}
+\chapter{Software Design Specification (SDS)}
 \label{chap:sds}
 \input{chapters/sds}
 
@@ -98,7 +94,7 @@ Abstract goes here
 \input{chapters/appendix-code}
 
 
-% Print the bibliography with a ToC entry and titled, "Referneces".
+% Print the bibliography with a ToC entry and titled, "References".
 \printbibliography[heading=bibintoc,title={References}]
 
 \end{document}
