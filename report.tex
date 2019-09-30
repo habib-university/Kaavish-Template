@@ -1,6 +1,8 @@
-% adapted from the 5-part series at https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1):_Basic_Structure
+% adapted by WS from SSR's Word document and from the 5-part series at
+% https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1):_Basic_Structure
+% reviewd by MAM
 
-\documentclass[12pt]{report}
+\documentclass[12pt,twosided]{report}
 
 \usepackage{biblatex}  % reference management
 \usepackage{geometry}  % better margins and margin control
@@ -9,16 +11,36 @@
 \usepackage[utf8]{inputenc}  % support for non-ASCII characters
 \usepackage{listings}  % typset code
 \usepackage{outlines}  % easy nesting of lists
+\usepackage{tabularx}  % more control over table column width
+\usepackage{titlesec}  % customize chapter title 
 \usepackage{upquote}  % prevent mishandling of single quotes in listings
 
-% --- Customize the appearance of hyperref links using \hypersetup
+
+\usepackage{lipsum}
+
+% TODO: Customize the appearance of hyperref links using \hypersetup
 % See https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Customization
 
-\addbibresource{references.bib}  % separate file for references
+% Custom format of chapter title.
+\titleformat{\chapter}[hang]{\bf\huge}{\thechapter.}{2pc}{}
 
-\graphicspath{ {images/} }  % separate folder for images
+% Separate folder for images named 'images'.
+\graphicspath{ {images/} }
+
+% Separate file for references
+\addbibresource{references.bib}
+
+% Replace with your title
+\title{Chhoti Si Kaavish}
+
+% Allow recalling document title
+% from https://tex.stackexchange.com/a/15806/44301
+\makeatletter\let\Title\@title\makeatother  
 
 \begin{document}
+
+\include{titlepage}  % title page.
+\include{approval}  % approval page.
 
 \chapter*{Dedication}
 For ammi, abbu, and pappu.
@@ -29,16 +51,17 @@ We want to thank the CS faculty and ...
 \chapter*{Abstract}
 Abstract goes here
 
-% --- The following are generated automatically.
+% The following are automatically populated by LaTeX \chapter, \section and related, \figure, and \table.
 \tableofcontents
 \listoffigures
 \listoftables
 
-% --- Put chapters in a separate folder.
+% TODO: Put chapters in a separate folder named 'chapters'.
 
 \chapter{Introduction}
 \label{chap:intro}
 \input{chapters/introduction}
+\lipsum[2-14]
 
 \chapter{Literature Review}
 \label{chap:lit}
@@ -48,12 +71,11 @@ Abstract goes here
 \label{chap:srs}
 \input{chapters/srs}
 
-\chapter{Software Design Specifications (SDS)}
+\chapter{Software Design Specification\\ (SDS)}
 \label{chap:sds}
 \input{chapters/sds}
 
-% --- Rename apprporiately for your Kaaivsh.
-\chapter{Implementation/Experiments and Results}
+\chapter{Experiments and Results}
 \label{chap:results}
 \input{chapters/results}
 
@@ -61,22 +83,27 @@ Abstract goes here
 \label{chap:outro}
 \input{chapters/conclusion}
 
-
 \appendix
+
+% This appendix is optional.
 \chapter{More Math}
 \input{chapters/appendix-math}
 
+% This appendix is required if the data set is not fully described in the main text.
 \chapter{Data}
 \input{chapters/appendix-data}
 
+% This appendix is required if the code is not fully described in the main text.
 \chapter{Code}
 \input{chapters/appendix-code}
 
 
-% --- Print the bibliography with a TOC entry and headed, "Referneces".
+% Print the bibliography with a ToC entry and titled, "Referneces".
 \printbibliography[heading=bibintoc,title={References}]
 
-
-
-
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
