@@ -1,7 +1,7 @@
 % adapted by WS from the 5-part series at
 % https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_1):_Basic_Structure
 
-\documentclass[12pt]{report}
+\documentclass[12pt,twosided]{report}
 
 \usepackage{biblatex}  % reference management
 \usepackage{geometry}  % better margins and margin control
@@ -12,6 +12,8 @@
 \usepackage{outlines}  % easy nesting of lists
 \usepackage{titlesec}  % customize chapter title 
 \usepackage{upquote}  % prevent mishandling of single quotes in listings
+
+\usepackage{lipsum}
 
 % TODO: Customize the appearance of hyperref links using \hypersetup
 % See https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Customization
@@ -56,6 +58,7 @@ Abstract goes here
 \chapter{Introduction}
 \label{chap:intro}
 \input{chapters/introduction}
+\lipsum[2-14]
 
 \chapter{Literature Review}
 \label{chap:lit}
@@ -97,3 +100,8 @@ Abstract goes here
 \printbibliography[heading=bibintoc,title={References}]
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
