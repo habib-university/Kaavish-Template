@@ -4,6 +4,7 @@
 
 \documentclass[12pt,twosided]{report}
 
+\usepackage[titletoc]{appendix} % for adding appendix to TOC
 \usepackage{biblatex}  % reference management
 \usepackage{geometry}  % better margins and margin control
 \usepackage{graphicx}  % to include figures
@@ -14,6 +15,7 @@
 \usepackage{tabularx}  % more control over table column width
 \usepackage{titlesec}  % customize chapter title 
 \usepackage{upquote}  % prevent mishandling of single quotes in listings
+
 
 % TODO: Customize the appearance of hyperref links using \hypersetup
 % See https://en.wikibooks.org/wiki/LaTeX/Hyperlinks#Customization
@@ -79,8 +81,12 @@ Abstract goes here
 \label{chap:outro}
 \input{chapters/conclusion}
 
-\appendix
+\begin{appendices}
 
+\titleformat{\chapter}[hang]{\bf\huge}{Appendix \thechapter.}{2pc}{}
+% \titleformat{\chapter}[hang]{\bf\huge}{\thechapter.}{2pc}{}
+
+  
 % This appendix is optional.
 \chapter{More Math}
 \input{chapters/appendix-math}
@@ -92,7 +98,7 @@ Abstract goes here
 % This appendix is required if the code is not fully described in the main text.
 \chapter{Code}
 \input{chapters/appendix-code}
-
+\end{appendices}
 
 % Print the bibliography with a ToC entry and titled, "References".
 \printbibliography[heading=bibintoc,title={References}]
